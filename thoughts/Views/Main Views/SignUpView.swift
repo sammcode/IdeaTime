@@ -21,7 +21,7 @@ struct SignUpView: View {
         NavigationView{
             Background{
                 ZStack{
-                    Color("lighterblue").edgesIgnoringSafeArea(.all)
+                    Colors.lighterblue.edgesIgnoringSafeArea(.all)
                     VStack{
                         VStack {
                             TextField("Name", text: self.$name)
@@ -66,7 +66,7 @@ struct SignUpView: View {
                                     .font(.headline)
                                     .fontWeight(.semibold)
                                     .padding()
-                                    .foregroundColor(Color("chillblue"))
+                                    .foregroundColor(Colors.chillblue)
                             }
                         }
                         
@@ -112,7 +112,7 @@ struct SignUpView: View {
                                 .font(.title)
                                 .padding()
                                 
-                                .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Color("niceblue"))
+                                .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Colors.niceblue)
                                 .foregroundColor(Color.white)
                                 .cornerRadius(50)
                                 .shadow(radius: 5)
@@ -174,7 +174,6 @@ func createNewUser(email: String, password: String) -> String{
             let cUser = Firebase.Auth.auth().currentUser
             let db = Firestore.firestore()
             db.collection("users").document(cUser!.uid).setData(["userID": cUser!.uid])
-            
             db.collection("users").document(cUser!.uid).collection("categories")
             db.collection("users").document(cUser!.uid).collection("allThoughts")
             db.collection("users").document(cUser!.uid).collection("favoriteThoughts")

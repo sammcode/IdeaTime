@@ -9,7 +9,6 @@
 import SwiftUI
 import Firebase
 
-
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
@@ -19,7 +18,7 @@ struct LoginView: View {
         NavigationView{
             Background{
             ZStack{
-            Color("lighterblue").edgesIgnoringSafeArea(.all)
+                Colors.lighterblue.edgesIgnoringSafeArea(.all)
             VStack{
                 VStack {
                     TextField("Email", text: self.$email)
@@ -49,7 +48,7 @@ struct LoginView: View {
                         .font(.headline)
                         .fontWeight(.semibold)
                         .padding()
-                        .foregroundColor(Color("chillblue"))
+                        .foregroundColor(Colors.chillblue)
                 }
                 VStack {
                     Button(action: {
@@ -75,8 +74,7 @@ struct LoginView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .padding()
-                        
-                            .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Color("niceblue"))
+                        .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Colors.niceblue)
                         .foregroundColor(Color.white)
                         .cornerRadius(50)
                         .shadow(radius: 5)
@@ -91,7 +89,6 @@ struct LoginView: View {
                 }
             }
             .navigationBarTitle("Login")
-            //.background(Color("lighterblue"))
             }
         }.onTapGesture(perform: endEditing)
         }.navigationViewStyle(StackNavigationViewStyle())

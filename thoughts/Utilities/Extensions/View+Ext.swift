@@ -26,3 +26,28 @@ extension View {
         ModifiedContent(content: self, modifier: KeyboardAwareModifier())
     }
 }
+
+extension View {
+    func toast(isShowing: Binding<Bool>) -> some View {
+        Toast(isShowing: isShowing,
+              presenting: { self }, viewRouter: ViewRouter()).environmentObject(categoryData())
+    }
+}
+
+extension View{
+    func delCatToast(isShowing: Binding<Bool>, category: Category) -> some View {
+        DeleteCategoryPopUp(category: category, isShowing: isShowing,
+            presenting: { self }).environmentObject(categoryData())
+    }
+}
+
+extension View {
+    func deleteToast(isShowing: Binding<Bool>, thought: Thought) -> some View {
+        DeletePopUp(thought: thought, isShowing: isShowing,
+              presenting: { self })
+    }
+    func addToToast(isShowing: Binding<Bool>, thought: Thought) -> some View {
+        AddToPopUp(thought: thought, isShowing: isShowing,
+            presenting: { self }).environmentObject(categoryData())
+    }
+}

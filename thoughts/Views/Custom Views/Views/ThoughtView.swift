@@ -17,7 +17,7 @@ struct ThoughtView: View {
                 Text(thought.refDate)
                     .font(.subheadline)
                     .padding(5)
-                    .background(Color("darkgray")) .foregroundColor(Color("textcolor"))
+                    .background(Colors.darkgray) .foregroundColor(Colors.textcolor)
                     .cornerRadius(5)
                     .multilineTextAlignment(.leading)
                 
@@ -26,7 +26,7 @@ struct ThoughtView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(5)
-                    .background(Color("darkgray")) .foregroundColor(Color("textcolor"))
+                        .background(Colors.darkgray) .foregroundColor(Colors.textcolor)
                     .cornerRadius(5)
                     .multilineTextAlignment(.leading)
                     
@@ -36,14 +36,14 @@ struct ThoughtView: View {
                 if thought.isFavorite{
                     Image(systemName: "star.fill")
                     .frame(width: 40, height: 28)
-                    .background(Color("darkgray"))
+                        .background(Colors.darkgray)
                     .foregroundColor(buttonColor)
                     .cornerRadius(5)
                 }
                 if !thought.isFavorite{
                     Image(systemName: "star.fill")
                     .frame(width: 40, height: 28)
-                    .background(Color("darkgray"))
+                        .background(Colors.darkgray)
                     .foregroundColor(buttonColor)
                     .cornerRadius(5)
                 }
@@ -53,7 +53,7 @@ struct ThoughtView: View {
                 Text(thought.content)
                     .font(.headline)
                     .padding(5)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("chillblue"), Color("niceblue")]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Colors.chillblue, Colors.niceblue]), startPoint: .leading, endPoint: .trailing))
                     .foregroundColor(Color.white)
                     .cornerRadius(5) .multilineTextAlignment(.center)
                     .padding(.trailing)
@@ -67,7 +67,7 @@ struct ThoughtView: View {
         if thought.isFavorite == true{
             return Color.yellow
         }else{
-            return Color("textcolor")
+            return Colors.textcolor
         }
     }
 }

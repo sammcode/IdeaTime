@@ -6,4 +6,14 @@
 //  Copyright © 2020 Sam McGarry. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+
+struct ResignKeyboardOnDragGesture: ViewModifier {
+    var gesture = DragGesture().onChanged{_ in
+        UIApplication.shared.endEditing(true)
+    }
+    func body(content: Content) -> some View {
+        content.gesture(gesture)
+    }
+}

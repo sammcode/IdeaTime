@@ -17,8 +17,8 @@ struct CategoryCardView: View {
                         .font(.system(size: 40))
                         .fontWeight(.bold)
                         .frame(width: 280)
-                        .background(Color("darkgray"))
-                        .foregroundColor(Color("textcolor"))
+                        .background(Colors.darkgray)
+                        .foregroundColor(Colors.textcolor)
                         .cornerRadius(10) .multilineTextAlignment(.center)
                         .lineLimit(2)
                         .shadow(radius: 5)
@@ -33,9 +33,9 @@ struct CategoryCardView: View {
     
     var cardColor: Color {
         if category.name == "All Thoughts" || category.name == "Favorites"{
-            return Color("chillorange")
+            return Colors.chillorange
         }else{
-            return Color("niceblue")
+            return Colors.niceblue
         }
     }
 }

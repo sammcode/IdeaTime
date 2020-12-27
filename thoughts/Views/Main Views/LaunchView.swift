@@ -8,16 +8,14 @@
 
 import SwiftUI
 
-
-
 struct LaunchView: View {
     
     @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         ZStack{
-            Color("lighterblue").edgesIgnoringSafeArea(.all)
+            Colors.lighterblue.edgesIgnoringSafeArea(.all)
         VStack{
-            Text("Thought Matter")
+            Text("Idea Time")
                 .font(.system(size: 90))
                 .fontWeight(.heavy)
                 .foregroundColor(Color.white)
@@ -35,7 +33,7 @@ struct LaunchView: View {
                     .font(.title)
                     .padding()
                     
-                .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Color("niceblue"))
+                    .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Colors.niceblue)
                 .foregroundColor(Color.white)
                 .cornerRadius(50)
                 .shadow(radius: 5)
@@ -49,7 +47,7 @@ struct LaunchView: View {
                     .font(.title)
                     .padding()
                     
-                    .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Color("niceblue"))
+                    .frame(width: UIScreen.main.bounds.width/1.2, height: 50) .background(Colors.niceblue)
                 .foregroundColor(Color.white)
                 .cornerRadius(50)
                 .shadow(radius: 5)
